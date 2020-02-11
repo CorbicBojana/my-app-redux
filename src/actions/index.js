@@ -10,7 +10,13 @@ export const decrement = () => {
   };
 };
 
-export const logg = () => {
+export const logout = () => {
+  return {
+    type: "LOGOUT"
+  };
+};
+
+export const login = () => {
   return {
     type: "LOGIN"
   };

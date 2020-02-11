@@ -4,11 +4,11 @@ import "./app.css";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { increment, decrement, logg } from "./actions/index";
+import { increment, decrement, login, logout } from "./actions/index";
 
 function App() {
   const counter = useSelector(state => state.counter);
-  const login = useSelector(state => state.login);
+  const isLoggedIn = useSelector(state => state.login);
   const dispatch = useDispatch();
 
   return (
@@ -25,9 +25,15 @@ function App() {
         </button>
       </div>
       <div className="container">
-        <button className="button" onClick={() => dispatch(logg())}>
-          {login ? "Login" : "Logout"}
-        </button>
+        {isLoggedIn ? (
+          <button className="button" onClick={() => dispatch(logout())}>
+            Logout
+          </button>
+        ) : (
+          <button className="button" onClick={() => dispatch(login())}>
+            Login
+          </button>
+        )}
       </div>
     </div>
   );
