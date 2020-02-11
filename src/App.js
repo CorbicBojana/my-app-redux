@@ -16,12 +16,12 @@ function App() {
       <div className="container counter">{counter}</div>
       <div className="container">
         <button className="button" onClick={() => dispatch(increment())}>
-          +
+          ++
         </button>
       </div>
       <div className="container">
         <button className="button" onClick={() => dispatch(decrement())}>
-          -
+          --
         </button>
       </div>
       <div className="container">
